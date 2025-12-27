@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Layout Base</title>
+    <title>Argent Bank</title>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/base.css">
-</head>
-<body>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <div onclick="navigateTo('index.html')">
+          <h1>Argent Bank</h1>
+        </div>
+      </header>
+      <main class="app-body">
+        <div class="saldo-resumo">
+          <span class="saldo-label">Saldo Comercial</span>
+          <strong id="saldoGlobal">R$ 0,00</strong>
+        </div>
 
-  <div class="app-container">
+        <div class="grid-container">
+          <!-- Grid 6x6 -->
+          <div class="grid-item" onclick="navigateTo('saldo.html')">
+           Saldo Inteligente
+          </div>
 
-    <header class="app-header">
-      <h1>Argent Bank</h1>
-    </header>
+          <div class="grid-item" onclick="navigateTo('colaboradores.html')">
+            Meus Colaboradores
+          </div>
+        </div>
+      </main>
 
-    
-    <main class="app-body">
-      <div class="grid-container">
-        <!-- Grid 6x6 -->
-         <div class="grid-item" onclick="navigateTo('saldo.html')">
-  Acessar Saldo
-</div>
-        <div class="grid-item" onclick="navigateTo('colaboradores.html')">Meus Colaboradores</div>
-        <div class="grid-item"></div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
+      <div class="acesso-colaboradores">
+        <a href="colaboradores.html" class="link-colaboradores">
+          Minha equipe
+        </a>
       </div>
-    </main>
 
-    <footer class="app-footer">
-      <span>Parceiros</span>
-    </footer>
+      <footer class="app-footer">
+        <span>Parceiros</span>
+      </footer>
+    </div>
 
-  </div>
-
-  <!-- JS -->
-  <script src="assets/js/actions.js"></script>
-</body>
+    <!-- JS -->
+    <script src="assets/js/actions.js"></script>
+  </body>
 </html>

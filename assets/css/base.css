@@ -104,3 +104,64 @@ ul, ol {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+.acesso-colaboradores {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.link-colaboradores {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background-color: #0f68dc;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-colaboradores:hover {
+  opacity: 0.9;
+}
+
+
+
+.info-icon {
+  margin-left: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #0f68dc;
+  color: #0f68dc;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.info-icon::after {
+  content: "Clique e saiba para que usar este dinheiro";
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f68dc;
+  color: #fff;
+  font-size: 10px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.info-icon:hover::after {
+  opacity: 1;
+}

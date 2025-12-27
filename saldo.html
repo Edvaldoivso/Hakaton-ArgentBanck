@@ -12,6 +12,19 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/saldo.css">
 </head>
+
+
+<!-- Modal global -->
+<div id="infoModal" class="modal hidden">
+  <div class="modal-overlay" onclick="fecharInfo()"></div>
+
+  <div class="modal-content">
+    <span class="modal-close" onclick="fecharInfo()">×</span>
+    <p id="infoModalText"></p>
+  </div>
+</div>
+
+
 <body>
 
 <div class="app-container">
@@ -19,63 +32,86 @@
   <header class="app-header">
     <h1>Saldo total: <span id="saldoTotal">R$ 0,00</span></h1>
   </header>
+<main class="app-body">
 
-  <main class="app-body">
+  <div class="saldo-wrapper">
 
-    <div class="saldo-wrapper">
+    <div class="saldo-bar">
 
-      <div class="saldo-bar">
+      <div class="segment enrich" data-key="enriquecimento">
+  <div class="segment-bg">
+    <div class="segment-fill"></div>
+  </div>
+  <span class="label">Enriquecimento</span>
+  <span class="value" id="val-enriquecimento"></span>
+</div>
 
-        <div class="segment enrich" data-key="enriquecimento">
-          <span class="label">Enriquecimento</span>
-          <span class="value" id="val-enriquecimento"></span>
-        </div>
+<div class="segment consume" data-key="consumo">
+  <div class="segment-bg">
+    <div class="segment-fill"></div>
+  </div>
+  <span class="label">Consumo</span>
+  <span class="value" id="val-consumo"></span>
+</div>
 
-        <div class="segment consume" data-key="consumo">
-          <span class="label">Consumo</span>
-          <span class="value" id="val-consumo"></span>
-        </div>
+<div class="segment daily" data-key="dia-a-dia">
+  <div class="segment-bg">
+    <div class="segment-fill"></div>
+  </div>
+  <span class="label">Contas dia a dia</span>
+  <span class="value" id="val-dia"></span>
+</div>
 
-        <div class="segment daily" data-key="dia-a-dia">
-          <span class="label">Contas dia a dia</span>
-          <span class="value" id="val-dia"></span>
-        </div>
+    </div>
 
+    <div class="saldo-actions">
+
+      <div class="action-group">
+        <h3>
+          Enriquecimento
+          <span class="info-icon"
+            data-text="Saldo de urgências, sem se endividar. Ao manter dinheiro aqui, você tem rendimento automático de 100% do CDI ao mês, mas não deve sacar para não perder o rendimento mensal."
+            onclick="abrirInfo(this)">
+            i
+          </span>
+        </h3>
+        <button onclick="depositar('enriquecimento')">Depositar</button>
+        <button onclick="sacar('enriquecimento')">Sacar</button>
       </div>
 
-      <div class="saldo-actions">
+      <div class="action-group">
+        <h3>
+          Dinheiro do Dia a Dia
+          <span class="info-icon"
+            data-text="Use este saldo para streaming, passeios, salão e barbeiro, shopping online, presentes e lazer em geral."
+            onclick="abrirInfo(this)">
+            i
+          </span>
+        </h3>
+        <button onclick="depositar('consumo')">Depositar</button>
+        <button onclick="sacar('consumo')">Sacar</button>
+      </div>
 
-        <div class="action-group">
-          <h3>Enriquecimento</h3>
-          <button onclick="depositar('enriquecimento')">Depositar</button>
-          <button onclick="sacar('enriquecimento')">Sacar</button>
-        </div>
-
-        <div class="action-group">
-          <h3>Consumo</h3>
-          <button onclick="depositar('consumo')">Depositar</button>
-          <button onclick="sacar('consumo')">Sacar</button>
-        </div>
-
-        <div class="action-group">
-          <h3>Dia a dia</h3>
-          <button onclick="depositar('dia-a-dia')">Depositar</button>
-          <button onclick="sacar('dia-a-dia')">Sacar</button>
-        </div>
-
+      <div class="action-group">
+        <h3>
+          Dinheiro das Contas
+          <span class="info-icon"
+            data-text="Use para energia elétrica, água, aluguel, mercado, transporte, saúde e farmácia."
+            onclick="abrirInfo(this)">
+            i
+          </span>
+        </h3>
+        <button onclick="depositar('dia-a-dia')">Depositar</button>
+        <button onclick="sacar('dia-a-dia')">Sacar</button>
       </div>
 
     </div>
 
-    
+  </div>
 
-  </main>
+</main>
 
-  <div class="acesso-colaboradores">
-  <a href="colaboradores.html" class="link-colaboradores">
-    👥 Acessar colaboradores
-  </a>
-</div>
+
 
 
   <footer class="app-footer">
@@ -84,7 +120,11 @@
 
 </div>
 
+
+
 <script src="assets/js/actions.js"></script>
 <script src="assets/js/saldo.js"></script>
 </body>
 </html>
+
+
