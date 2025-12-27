@@ -1,0 +1,129 @@
+.saldo-wrapper {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Barra vertical */
+.saldo-bar {
+  width: 120px;
+  height: 420px;
+  border: 1px solid #F8D2A0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Segmentos */
+.segment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 12px;
+  transition: height 0.3s ease;
+}
+
+.enrich {
+  background-color: #A0C6F8;
+}
+
+.consume {
+  background-color: #DC830F;
+  color: #fff;
+}
+
+.daily {
+  background-color: #ffffff;
+}
+
+/* Valores */
+.segment .value {
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* Ações */
+.saldo-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.action-group {
+  border: 1px solid #F8D2A0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.action-group button {
+  margin-top: 6px;
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #F8D2A0;
+  background: #fff;
+  cursor: pointer;
+}
+
+
+/* Fundo base do segmento */
+.segment-bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Preenchimento dinâmico */
+.segment-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: height 0.4s ease;
+}
+
+/* Cores do preenchimento */
+.enrich .segment-fill {
+  background-color: #A0C6F8;
+}
+
+.consume .segment-fill {
+  background-color: #DC830F;
+}
+
+.daily .segment-fill {
+  background-color: #0f68dc;
+}
+
+/* Ajuste visual do segmento */
+.segment {
+  position: relative;
+  padding: 6px;
+}
+
+
+.acesso-colaboradores {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.link-colaboradores {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background-color: #0f68dc;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-colaboradores:hover {
+  opacity: 0.9;
+}

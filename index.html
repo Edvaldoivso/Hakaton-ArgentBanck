@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Layout Base</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <header class="app-header">
+      <h1>Argent Bank</h1>
+    </header>
+
+    
+    <main class="app-body">
+      <div class="grid-container">
+        <!-- Grid 6x6 -->
+         <div class="grid-item" onclick="navigateTo('saldo.html')">
+  Acessar Saldo
+</div>
+        <div class="grid-item" onclick="navigateTo('colaboradores.html')">Meus Colaboradores</div>
+        <div class="grid-item"></div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <span>Parceiros</span>
+    </footer>
+
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/actions.js"></script>
+</body>
+</html>

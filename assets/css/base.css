@@ -1,0 +1,106 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  background-color: #A0C6F8;
+}
+
+a:active {
+  color: red;
+}
+
+/* Listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Container geral com borda a 3px da tela */
+.app-container {
+  min-height: calc(100vh - 6px);
+  margin: 3px;
+  border: 1px solid #F8D2A0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Header */
+.app-header {
+  padding: 16px;
+  background-color: #0f68dc;
+  color: #ffffff;
+  border-bottom: 1px solid #F8D2A0;
+}
+
+/* Body */
+.app-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+/* Grid 6x6 */
+.grid-container {
+  width: 50%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 12px;
+}
+
+/* Itens do grid */
+.grid-item {
+  min-height: 80px;
+  background-color: #ffffff;
+  border: 1px solid #F8D2A0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Footer */
+.app-footer {
+  padding: 12px;
+  background-color: #DC830F;
+  color: #ffffff;
+  text-align: center;
+  border-top: 1px solid #F8D2A0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}

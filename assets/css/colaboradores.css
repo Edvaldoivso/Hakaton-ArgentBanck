@@ -1,0 +1,111 @@
+.colab-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.colab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.colab-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #F8D2A0;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.colab-item:hover {
+  background-color: #A0C6F8;
+}
+
+.colab-item.add {
+  justify-content: center;
+  font-weight: 600;
+}
+
+.avatar {
+  font-size: 24px;
+}
+
+.resumo-footer {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.alert {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #ffe5e5;
+  color: #b00000;
+}
+
+.cta {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0f68dc;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 320px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.custos {
+  margin-top: 12px;
+}
+
+.custos li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.custos .total {
+  font-weight: 700;
+  border-top: 1px solid #F8D2A0;
+  padding-top: 6px;
+}
+
+.modal-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}

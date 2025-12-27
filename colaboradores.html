@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colaboradores</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/colaboradores.css">
+</head>
+<body>
+
+<div class="app-container">
+
+  <header class="app-header">
+    <h1>Custos com Pessoal</h1>
+  </header>
+
+  <main class="app-body">
+
+    <div class="colab-wrapper">
+
+      <div class="colab-list">
+
+        <div class="colab-item" onclick="abrirModal(1)">
+          <span class="avatar">🙂</span>
+          <div>
+            <strong>Colaborador 1</strong>
+            <p>Custo Funcionário</p>
+          </div>
+        </div>
+
+        <div class="colab-item" onclick="abrirModal(2)">
+          <span class="avatar">🙂</span>
+          <div>
+            <strong>Colaborador 2</strong>
+            <p>Custo Funcionário</p>
+          </div>
+        </div>
+
+        <div class="colab-item add">
+          <span>+</span>
+          <p>Vincular novo colaborador</p>
+        </div>
+
+      </div>
+
+      <div class="resumo-footer">
+        <p><strong>Custos com pessoal:</strong> R$ 500.000,00</p>
+        <p><strong>Saldo:</strong> R$ 1.000.000,00</p>
+
+        <div class="alert">
+          Alerta! Os gastos estão consumindo demais o seu patrimônio
+        </div>
+
+        <button class="cta">
+          Acesse o Shopping Corporativo
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="app-footer">
+    Gestão inteligente de colaboradores
+  </footer>
+
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <span class="close" onclick="fecharModal()">×</span>
+
+    <h2 id="modal-nome">Colaborador</h2>
+    <p id="modal-conta">Conta</p>
+
+    <ul class="custos">
+      <li>Salário <span id="salario"></span></li>
+      <li>Férias (provisão) <span id="ferias"></span></li>
+      <li>Vale-transporte <span id="vt"></span></li>
+      <li>FGTS (8%) <span id="fgts"></span></li>
+      <li class="total">Total mensal <span id="total"></span></li>
+    </ul>
+
+    <div class="modal-actions">
+      <a href="#">Pagar salário</a>
+      <a href="#">Agendar pagamento</a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/actions.js"></script>
+<script src="assets/js/colaboradores.js"></script>
+</body>
+</html>

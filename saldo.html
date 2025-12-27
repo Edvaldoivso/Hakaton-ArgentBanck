@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acessar Saldo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/saldo.css">
+</head>
+<body>
+
+<div class="app-container">
+
+  <header class="app-header">
+    <h1>Saldo total: <span id="saldoTotal">R$ 0,00</span></h1>
+  </header>
+
+  <main class="app-body">
+
+    <div class="saldo-wrapper">
+
+      <div class="saldo-bar">
+
+        <div class="segment enrich" data-key="enriquecimento">
+          <span class="label">Enriquecimento</span>
+          <span class="value" id="val-enriquecimento"></span>
+        </div>
+
+        <div class="segment consume" data-key="consumo">
+          <span class="label">Consumo</span>
+          <span class="value" id="val-consumo"></span>
+        </div>
+
+        <div class="segment daily" data-key="dia-a-dia">
+          <span class="label">Contas dia a dia</span>
+          <span class="value" id="val-dia"></span>
+        </div>
+
+      </div>
+
+      <div class="saldo-actions">
+
+        <div class="action-group">
+          <h3>Enriquecimento</h3>
+          <button onclick="depositar('enriquecimento')">Depositar</button>
+          <button onclick="sacar('enriquecimento')">Sacar</button>
+        </div>
+
+        <div class="action-group">
+          <h3>Consumo</h3>
+          <button onclick="depositar('consumo')">Depositar</button>
+          <button onclick="sacar('consumo')">Sacar</button>
+        </div>
+
+        <div class="action-group">
+          <h3>Dia a dia</h3>
+          <button onclick="depositar('dia-a-dia')">Depositar</button>
+          <button onclick="sacar('dia-a-dia')">Sacar</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    
+
+  </main>
+
+  <div class="acesso-colaboradores">
+  <a href="colaboradores.html" class="link-colaboradores">
+    👥 Acessar colaboradores
+  </a>
+</div>
+
+
+  <footer class="app-footer">
+    Gestão inteligente do seu dinheiro
+  </footer>
+
+</div>
+
+<script src="assets/js/actions.js"></script>
+<script src="assets/js/saldo.js"></script>
+</body>
+</html>
