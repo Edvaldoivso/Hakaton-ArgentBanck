@@ -6,7 +6,9 @@ const DISTRIBUICAO = {
 
 let valores = {};
 
-let limites = {};
+
+
+
 
 function gerarSaldo() {
   return Math.floor(Math.random() * (120000 - 37000 + 1)) + 37000;
@@ -37,8 +39,6 @@ function formatar(valor) {
 function calcularDistribuicao() {
   Object.keys(DISTRIBUICAO).forEach((key) => {
     valores[key] = saldoTotal * DISTRIBUICAO[key];
-
-    limites[key] = valorInicial; // trava o máximo visual
   });
 }
 
