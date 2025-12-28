@@ -1,108 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Colaboradores</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colaboradores</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  >
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/colaboradores.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/colaboradores.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <button class="btn-home" onclick="navigateTo('index.html')">⬅</button>
 
-<div class="app-container">
+        <h1>Custos com Pessoal</h1>
+      </header>
 
-  <header class="app-header">
-      <button class="btn-home" onclick="navigateTo('index.html')">
-    ⬅
-  </button>
+      <main class="app-body">
+        <div class="colab-wrapper">
+          <div class="colab-list">
+            <div class="colab-item" onclick="abrirModal(1)">
+              <span class="avatar">🙂</span>
+              <div>
+                <strong>Carlos Repositor</strong>
+                <p>Ver custo com o funcionário</p>
+              </div>
+            </div>
 
-    <h1>Custos com Pessoal</h1>
-  </header>
+            <div class="colab-item" onclick="abrirModal(2)">
+              <span class="avatar">🙂</span>
+              <div>
+                <strong>Amanda Caixa</strong>
+                <p>Ver custo com o funcionário</p>
+              </div>
+            </div>
 
-  <main class="app-body">
+            <div class="colab-item add">
+              <span id="totalColaboradores">0</span>
+              <p>Colaboradores convidados</p>
+            </div>
+          </div>
 
-    <div class="colab-wrapper">
+          <div class="resumo-footer">
+            <p><strong>Custos com pessoal:</strong> R$ 500.000,00</p>
+            <p>
+              <strong>Saldo:</strong>
+              <span id="saldoTotal">R$ 1.000.000,00</span>
+            </p>
 
-      <div class="colab-list">
+            <div class="alert">
+              Alerta! Os gastos estão consumindo todo o seu patrimônio.
+            </div>
 
-        <div class="colab-item" onclick="abrirModal(1)">
-          <span class="avatar">🙂</span>
-          <div>
-            <strong>Carlos Repositor</strong>
-            <p>Ver custo com Funcionário</p>
+            <button id="btnAbrirConvite" class="cta">
+              Compartilhar solicitação de abertura de conta
+            </button>
           </div>
         </div>
+      </main>
 
-        <div class="colab-item" onclick="abrirModal(2)">
-          <span class="avatar">🙂</span>
-          <div>
-            <strong>Amanda Caixa</strong>
-            <p>Ver custo com Funcionário</p>
-          </div>
-        </div>
-
-        <div class="colab-item add">
-          <span>+</span>
-          <p>Vincular novo colaborador</p>
-        </div>
-
-      </div>
-
-      <div class="resumo-footer">
-        <p><strong>Custos com pessoal:</strong> R$ 500.000,00</p>
-        <p><strong>Saldo:</strong> R$ 1.000.000,00</p>
-
-        <div class="alert">
-          Alerta! Os gastos estão consumindo demais o seu patrimônio
-        </div>
-
-        <button class="cta">
-          Acesse o Shopping Corporativo
-        </button>
-      </div>
-
+      <footer class="app-footer">
+        Gestão inteligente de colaboradores
+      </footer>
     </div>
 
-  </main>
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+      <div class="modal">
+        <span class="close" onclick="fecharModal()">×</span>
 
-  <footer class="app-footer">
-    Gestão inteligente de colaboradores
-  </footer>
+        <h2 id="modal-nome">Colaborador</h2>
+        <p id="modal-conta">Conta</p>
 
-</div>
+        <ul class="custos">
+          <li>Salário <span id="salario"></span></li>
+          <li>Férias (provisão) <span id="ferias"></span></li>
+          <li>Vale-transporte <span id="vt"></span></li>
+          <li>FGTS (8%) <span id="fgts"></span></li>
+          <li class="total">Total mensal <span id="total"></span></li>
+        </ul>
 
-<!-- Modal -->
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <span class="close" onclick="fecharModal()">×</span>
-
-    <h2 id="modal-nome">Colaborador</h2>
-    <p id="modal-conta">Conta</p>
-
-    <ul class="custos">
-      <li>Salário <span id="salario"></span></li>
-      <li>Férias (provisão) <span id="ferias"></span></li>
-      <li>Vale-transporte <span id="vt"></span></li>
-      <li>FGTS (8%) <span id="fgts"></span></li>
-      <li class="total">Total mensal <span id="total"></span></li>
-    </ul>
-
-    <div class="modal-actions">
-      <a href="#">Pagar salário</a>
-      <a href="#">Agendar pagamento</a>
+        <div class="modal-actions">
+          <a href="#">Pagar salário</a>
+          <a href="#">Agendar pagamento</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<script src="assets/js/actions.js"></script>
-<script src="assets/js/colaboradores.js"></script>
-</body>
+    <div class="modal-overlay" id="modalConvite">
+      <div class="modal">
+        <span class="close" id="fecharModalConvite">&times;</span>
+
+        <h3>Convidar colaborador</h3>
+
+        <input
+          type="text"
+          id="nomeColaborador"
+          placeholder="Nome do colaborador"
+        />
+
+        <input
+          type="tel"
+          id="telefoneColaborador"
+          placeholder="Telefone (WhatsApp)"
+        />
+
+        <input
+          type="number"
+          id="salarioColaborador"
+          placeholder="Salário (R$)"
+        />
+
+        <select id="cargoColaborador">
+          <option value="">Tipo de cargo</option>
+          <option value="CLT">CLT</option>
+          <option value="PJ">PJ</option>
+          <option value="Estagiário">Estagiário</option>
+          <option value="Temporário">Temporário</option>
+        </select>
+
+        <div class="modal-actions">
+          <button class="btn-secundario" id="cancelarConviteColab">
+            Cancelar
+          </button>
+          <button class="btn-primario" id="confirmarConviteColab">
+            Convidar colaborador
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/actions.js"></script>
+    <script src="assets/js/colaboradores.js"></script>
+  </body>
 </html>

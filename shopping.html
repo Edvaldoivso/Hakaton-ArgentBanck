@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Empresarial</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/shopping.css" />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <button class="btn-home" onclick="navigateTo('index.html')">⬅</button>
+        <h1>Shopping Empresarial</h1>
+      </header>
+
+      <!-- INFORMATIVO -->
+      <section class="info-banco">
+        <h3>Benefícios exclusivos Argent Bank</h3>
+        <ul>
+          <li>Limite reduzido para compras em atacado a partir de 5 itens</li>
+          <li>Pagamento em até 60 dias para pedidos acima de 100 itens</li>
+          <li>Frete grátis na primeira compra</li>
+          <li>Segurança total e fornecedores selecionados</li>
+          <li>Mais de 500 parceiros em todo o Brasil</li>
+        </ul>
+      </section>
+
+      <!-- FILTRO -->
+      <section class="filtro">
+        <select id="filtroCategoria">
+          <option value="">Todas as áreas</option>
+          <option value="textil">Têxtil</option>
+          <option value="restaurantes">Restaurantes</option>
+          <option value="hotelaria">Hotelaria</option>
+          <option value="padarias">Padarias</option>
+          <option value="mercados">Mercados</option>
+          <option value="cosmeticos">Cosméticos</option>
+          <option value="farmacia">Farmácia</option>
+          <option value="construcao">Construção</option>
+          <option value="papelaria">Papelaria</option>
+          <option value="limpeza">Limpeza</option>
+        </select>
+      </section>
+
+      <!-- LISTA DE PARCEIROS -->
+      <main class="lista-parceiros" id="listaParceiros">
+        <!-- CARD -->
+        <div class="card-parceiro" data-categoria="padarias" onclick="abrirModalCompra()">
+          <div class="sigla">MJ</div>
+          <div class="info">
+            <strong>Moinho São Jorge</strong>
+            <p>Farinha, fermentos e insumos para panificação</p>
+            <small>
+              Pedido mínimo: 30 itens • Com ou sem CNPJ • Entrega em até 24h
+            </small>
+          </div>
+        </div>
+
+        <div class="card-parceiro" data-categoria="mercados" onclick="abrirModalCompra()">
+          <div class="sigla">AB</div>
+          <div class="info">
+            <strong>Alimentos Brasil</strong>
+            <p>Produtos alimentícios e atacado geral</p>
+            <small>
+              Pedido mínimo: 20 itens • Pagamento em até 30 dias • Entrega rápida
+            </small>
+          </div>
+        </div>
+
+        <div class="card-parceiro" data-categoria="cosmeticos" onclick="abrirModalCompra()">
+          <div class="sigla">CF</div>
+          <div class="info">
+            <strong>Cosméticos Forte</strong>
+            <p>Produtos de higiene e beleza profissional</p>
+            <small>
+              Venda com CNPJ • Frete grátis acima de 50 itens
+            </small>
+          </div>
+        </div>
+
+        <!-- Repita até ~15 cards (exemplo abaixo) -->
+
+        <div class="card-parceiro" data-categoria="hotelaria" onclick="abrirModalCompra()">
+          <div class="sigla">HT</div>
+          <div class="info">
+            <strong>Hotel Supply Brasil</strong>
+            <p>Roupas de cama, toalhas e amenities</p>
+            <small>
+              Pedido mínimo: 10 kits • Entrega em até 48h
+            </small>
+          </div>
+        </div>
+
+        <div class="card-parceiro" data-categoria="limpeza" onclick="abrirModalCompra()">
+          <div class="sigla">LP</div>
+          <div class="info">
+            <strong>Limpeza Pro</strong>
+            <p>Produtos profissionais de limpeza</p>
+            <small>
+              Pagamento em até 60 dias • Venda corporativa
+            </small>
+          </div>
+        </div>
+      </main>
+    </div>
+
+   <div class="modal-overlay hidden" id="modalCompra">
+  <div class="modal">
+    <h3>Atenção</h3>
+    <p>
+      Suas compras serão realizadas diretamente no site do parceiro.
+      Garantimos todos os benefícios exclusivos para clientes Argent Bank.
+    </p>
+
+    <div class="modal-actions">
+      <button class="btn-secundario" onclick="fecharModalCompra()">
+        Cancelar
+      </button>
+      <button class="btn-primario" onclick="fecharModalCompra()">
+        Continuar
+      </button>
+    </div>
+  </div>
+</div>
+
+    <script src="assets/js/actions.js"></script>
+    <script src="assets/js/shopping.js"></script>
+  </body>
+</html>

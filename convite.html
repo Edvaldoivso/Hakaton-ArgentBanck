@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colaboradores</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/convite.css" />
+  </head>
+
+  <!-- MODAL LOADING -->
+  <div class="modal-overlay hidden" id="modalLoading">
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <p>
+        Estamos preparando a sua experiência<br />
+        com uma nova interface
+      </p>
+    </div>
+  </div>
+
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Argent Bank</h1>
+      </header>
+
+      <section class="saldo-card">
+        <p>O SEU ARGENT SALDO</p>
+        <h2 id="saldoConvite">R$ 0,00</h2>
+      </section>
+
+      <!-- CARD CONVITE -->
+      <section class="card destaque" id="abrirModalConvite">
+        <h3>Experimente o Argent Empresarial</h3>
+        <p>
+          Você foi selecionado para experimentar a experiência
+          <strong>Argent MEI & ME</strong>.
+          Ative benefícios exclusivos e tenha uma gestão financeira
+          que nenhum outro banco oferece.
+        </p>
+        <span class="cta">Experimentar agora</span>
+      </section>
+
+      <!-- LISTA PIX -->
+      <section class="lista">
+        <h3>Movimentações recentes</h3>
+
+        <div class="card pix">
+          <strong>Pix recebido</strong>
+          <p>R$ 1.250,00 • 09:42</p>
+          <small>Moinho São Jorge • 12/12/2025</small>
+        </div>
+
+        <div class="card pix">
+          <strong>Pix recebido</strong>
+          <p>R$ 890,00 • 14:18</p>
+          <small>Distribuidora Pão & Cia • 11/12/2025</small>
+        </div>
+
+        <div class="card pix">
+          <strong>Pix recebido</strong>
+          <p>R$ 2.300,00 • 10:05</p>
+          <small>Farinhas Brasil Ltda • 10/12/2025</small>
+        </div>
+
+        <div class="card pix">
+          <strong>Pix recebido</strong>
+          <p>R$ 540,00 • 16:47</p>
+          <small>Insumos Trigo Forte • 09/12/2025</small>
+        </div>
+
+        <div class="card pix">
+          <strong>Pix recebido</strong>
+          <p>R$ 1.120,00 • 08:30</p>
+          <small>Panificação Alfa • 08/12/2025</small>
+        </div>
+      </section>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay hidden" id="modalCnpj">
+      <div class="modal">
+        <h3>Você já possui CNPJ?</h3>
+
+        <p>
+          Se quiser, você pode informar agora.
+          Caso prefira, pode continuar e preencher depois.
+        </p>
+
+        <input
+          type="text"
+          id="cnpjInput"
+          placeholder="Digite seu CNPJ (opcional)"
+        />
+
+        <div class="modal-actions">
+          <button class="btn-secundario" id="continuarSemCnpj">
+            Continuar sem informar
+          </button>
+          <button class="btn-primario" id="continuarComCnpj">
+            Continuar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/actions.js"></script>
+    <script src="assets/js/convite.js"></script>
+  </body>
+</html>

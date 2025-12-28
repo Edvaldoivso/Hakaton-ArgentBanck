@@ -1,138 +1,52 @@
+/* =======================
+   Wrapper geral
+======================= */
 .saldo-wrapper {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   width: 100%;
-  max-width: 700px;
+  max-width: 720px;
+  align-items: stretch;
 }
 
-/* Barra vertical */
+/* =======================
+   Barra vertical (card)
+======================= */
 .saldo-bar {
   width: 120px;
   height: 420px;
-  border: 1px solid #F8D2A0;
-  border-radius: 8px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* Segmentos */
-.segment {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-  font-size: 12px;
-  transition: height 0.3s ease;
-}
-
-.enrich {
-  background-color: #A0C6F8;
-}
-
-.consume {
-  background-color: #DC830F;
-  color: #fff;
-}
-
-.daily {
-  background-color: #0f68dc;
-}
-
-
-/* Valores */
-.segment .value {
-  font-weight: 700;
-  margin-top: 4px;
-}
-
-/* Ações */
-.saldo-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.action-group {
-  border: 1px solid #F8D2A0;
-  border-radius: 8px;
-  padding: 12px;
-}
-
-.action-group button {
-  margin-top: 6px;
-  width: 100%;
-  padding: 6px;
-  border-radius: 6px;
-  border: 1px solid #F8D2A0;
-  background: #fff;
-  cursor: pointer;
-}
-
-
-
-
-
-
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal.hidden {
-  display: none;
-}
-
-/* camada escura */
-.modal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-}
-
-/* conteúdo */
-.modal-content {
-  position: relative;
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  width: 90%;
-  max-width: 360px;
-  border: 1px solid #F8D2A0;
-  z-index: 1;
-}
-
-.modal-close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-
-
-
-
-/*Valor flutuante de cada section*/
-
+/* =======================
+   Segmentos
+======================= */
 .segment {
   position: relative;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
 }
 
+/* Camada base */
 .segment-bg {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.05);
+  background: rgba(0, 0, 0, 0.04);
   overflow: hidden;
 }
 
+/* Preenchimento animado */
 .segment-fill {
   position: absolute;
   bottom: 0;
@@ -141,16 +55,88 @@
   transition: height 0.4s ease;
 }
 
+/* Conteúdo acima */
+.segment .label,
+.segment .value {
+  position: relative;
+  z-index: 1;
+}
 
+/* =======================
+   Cores por tipo
+======================= */
+.enrich .segment-fill {
+  background: linear-gradient(180deg, #bfdbfe, #93c5fd);
+}
 
+.consume .segment-fill {
+  background: linear-gradient(180deg, #fbbf24, #dc830f);
+}
+
+.daily .segment-fill {
+  background: linear-gradient(180deg, #3b82f6, #1e40af);
+}
+
+.consume {
+  color: #ffffff;
+}
+
+.daily {
+  color: #ffffff;
+}
+
+/* Valor */
+.segment .value {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =======================
+   Ações
+======================= */
+.saldo-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.action-group {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.action-group button {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #f1f5f9;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.action-group button:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+/* =======================
+   Header interno
+======================= */
 .app-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px;
-  border-bottom: 1px solid #F8D2A0;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* Botão home */
 .btn-home {
   background: transparent;
   border: none;
@@ -158,42 +144,40 @@
   font-size: 20px;
   font-weight: 600;
   color: #ffffff;
+  opacity: 0.9;
 }
 
 .btn-home:hover {
-  text-decoration: underline;
+  opacity: 1;
 }
 
-
+/* =======================
+   Texto descritivo
+======================= */
 .descritivoSaldos {
-  border: 1px solid #f8d2a0; /* borda padrão do projeto */
-  border-radius: 8px;
-  background-color: transparent; /* transparente */
-  padding: 12px 14px;
-  margin: 12px 0;
+  border-radius: 14px;
+  background-color: transparent;
+  padding: 14px 16px;
+  margin: 14px 0;
   text-align: center;
+  border: 1px dashed #f8d2a0;
 }
 
-/* Texto interno */
 .descritivoSaldos small {
-  font-size: 11px;
-  font-weight: 800;
-  color: #555555;
-  line-height: 1.4;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  line-height: 1.5;
   display: block;
 }
 
-
-
-
-
+/* =======================
+   Modal (unificado)
+======================= */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,50 +190,57 @@
 
 .modal-content {
   background: #ffffff;
-  border: 1px solid #f8d2a0;
-  border-radius: 8px;
-  padding: 16px;
+  border-radius: 16px;
+  padding: 20px;
   width: 90%;
-  max-width: 320px;
+  max-width: 340px;
   text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content h3 {
   margin-bottom: 12px;
-  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
 }
 
 .modal-content input {
   width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #f8d2a0;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
   margin-bottom: 16px;
   font-size: 14px;
 }
 
 .modal-actions {
   display: flex;
-  gap: 8px;
-  justify-content: space-between;
+  gap: 10px;
 }
 
+/* Botões modal */
 .btn-primario {
   flex: 1;
-  background-color: #0f68dc;
+  background-color: #1e40af;
   color: #ffffff;
   border: none;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
 }
 
+.btn-primario:hover {
+  background-color: #2563eb;
+}
+
 .btn-secundario {
   flex: 1;
-  background-color: transparent;
-  border: 1px solid #f8d2a0;
+  background-color: #f1f5f9;
+  border: none;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-weight: 600;
   cursor: pointer;
 }

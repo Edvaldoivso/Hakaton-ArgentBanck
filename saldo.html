@@ -21,7 +21,8 @@
     <div class="modal-overlay" onclick="fecharInfo()"></div>
 
     <div class="modal-content">
-      <span class="modal-close" onclick="fecharInfo()">×</span>
+      <span class="modal-close" onclick="fecharInfo()">Fechar</span>
+      <hr />
       <p id="infoModalText"></p>
     </div>
   </div>
@@ -35,11 +36,11 @@
       </header>
 
       <div class="descritivoSaldos">
-        <small
-          >Na nossa visão exclusiva estratégica do seu dinheiro, cada uma das
-          partes do seu saldo pode ser usada para um fim especifico se voce se
-          mantiver dentro dos limites todos os meses a sua riquesa real vai
-          estar cada vez mais proxima do que voce espera
+        <small>
+          Na nossa visão estratégica exclusiva sobre o seu dinheiro, cada parte
+          do seu saldo pode ser usada para um fim específico. Se você se mantiver
+          dentro dos limites todos os meses, a sua riqueza real estará cada vez
+          mais próxima do que você espera.
         </small>
       </div>
 
@@ -66,7 +67,7 @@
               <div class="segment-bg">
                 <div class="segment-fill"></div>
               </div>
-              <span class="label">Contas dia a dia</span>
+              <span class="label">Contas do dia a dia</span>
               <span class="value" id="val-dia"></span>
             </div>
           </div>
@@ -77,34 +78,42 @@
                 Riqueza gerada
                 <span
                   class="info-icon"
-                  data-text="Saldo de urgências, sem se endividar. Ao manter dinheiro aqui, você tem rendimento automático de 100% do CDI ao mês, mas não deve sacar para não perder o rendimento mensal."
+                  data-text="Saldo para emergências, sem a necessidade de endividamento. Ao manter dinheiro aqui, você tem rendimento automático de 100% do CDI ao mês, mas não deve sacar para não perder o rendimento mensal."
                   onclick="abrirInfo(this)"
                 >
                   i
                 </span>
               </h3>
-              <button onclick="abrirModal('depositar','enriquecimento')">Depositar</button>
-              <button onclick="abrirModal('sacar', 'enriquecimento')">Sacar</button>
+              <button onclick="abrirModal('depositar','enriquecimento')">
+                Depositar
+              </button>
+              <button onclick="abrirModal('sacar', 'enriquecimento')">
+                Sacar
+              </button>
             </div>
 
             <div class="action-group">
               <h3>
-                Dinheiro do Dia a Dia
+                Dinheiro do dia a dia
                 <span
                   class="info-icon"
-                  data-text="Use este saldo para streaminG, NetFlix, Spotfy, passeios, salão e barbeiro, shopping online, presentes e lazer em geral."
+                  data-text="Use este saldo para streaming, Netflix, Spotify, passeios, salão, barbeiro, compras online, presentes e lazer em geral."
                   onclick="abrirInfo(this)"
                 >
                   i
                 </span>
               </h3>
-              <button onclick="abrirModal('depositar','consumo')">Depositar</button>
-              <button onclick="abrirModal('sacar', 'consumo')">Sacar</button>
+              <button onclick="abrirModal('depositar','consumo')">
+                Depositar
+              </button>
+              <button onclick="abrirModal('sacar', 'consumo')">
+                Sacar
+              </button>
             </div>
 
             <div class="action-group">
               <h3>
-                Dinheiro das Contas
+                Dinheiro das contas
                 <span
                   class="info-icon"
                   data-text="Use para energia elétrica, água, aluguel, mercado, transporte, saúde e farmácia."
@@ -116,13 +125,17 @@
               <button onclick="abrirModal('depositar', 'dia-a-dia')">
                 Depositar
               </button>
-              <button onclick="abrirModal('sacar', 'dia-a-dia')">Sacar</button>
+              <button onclick="abrirModal('sacar', 'dia-a-dia')">
+                Sacar
+              </button>
             </div>
           </div>
         </div>
       </main>
 
-      <footer class="app-footer">Gestão inteligente do seu dinheiro</footer>
+      <footer class="app-footer">
+        Gestão inteligente do seu dinheiro
+      </footer>
     </div>
 
     <script src="assets/js/actions.js"></script>
@@ -142,7 +155,9 @@
       />
 
       <div class="modal-actions">
-        <button class="btn-secundario" onclick="fecharModal()">Cancelar</button>
+        <button class="btn-secundario" onclick="fecharModal()">
+          Cancelar
+        </button>
         <button class="btn-primario" onclick="confirmarAcao()">
           Confirmar
         </button>

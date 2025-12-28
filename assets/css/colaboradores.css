@@ -1,70 +1,113 @@
+/* =======================
+   Wrapper
+======================= */
 .colab-wrapper {
   width: 100%;
   max-width: 420px;
 }
 
+/* =======================
+   Lista
+======================= */
 .colab-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
+/* =======================
+   Item (card)
+======================= */
 .colab-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border: 1px solid #F8D2A0;
-  border-radius: 8px;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
   cursor: pointer;
   background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background-color 0.2s ease;
 }
 
 .colab-item:hover {
-  background-color: #A0C6F8;
+  background-color: #eef4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
 }
 
+/* Item de adicionar */
 .colab-item.add {
   justify-content: center;
   font-weight: 600;
+  color: #1e40af;
+  background: #f8fafc;
+  border: 2px dashed #c7d2fe;
 }
 
+.colab-item.add:hover {
+  background: #eef2ff;
+}
+
+/* Avatar */
 .avatar {
-  font-size: 24px;
+  font-size: 26px;
 }
 
+/* =======================
+   Footer / resumo
+======================= */
 .resumo-footer {
-  margin-top: 25px;
+  margin-top: 28px;
   font-size: 14px;
+  color: #374151;
 }
 
+/* =======================
+   Alertas
+======================= */
 .alert {
   margin-top: 20px;
-  padding: 8px;
-  border-radius: 6px;
-  background-color: #ffe5e5;
-  color: #b00000;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #fee2e2;
+  color: #991b1b;
+  font-size: 13px;
 }
 
+/* =======================
+   CTA
+======================= */
 .cta {
-  margin-top: 12px;
+  margin-top: 14px;
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 12px;
   border: none;
-  background-color: #0f68dc;
-  color: #fff;
+  background-color: #1e40af;
+  color: #ffffff;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-/* Modal */
+.cta:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* =======================
+   Modal (unificado)
+======================= */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.45);
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 
 .modal-overlay.active {
@@ -73,53 +116,68 @@
 
 .modal {
   background: #ffffff;
-  padding: 16px;
-  border-radius: 8px;
+  padding: 18px;
+  border-radius: 16px;
   width: 90%;
-  max-width: 320px;
+  max-width: 340px;
   position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* Fechar */
 .close {
   position: absolute;
-  top: 8px;
-  right: 12px;
+  top: 10px;
+  right: 14px;
   cursor: pointer;
   font-size: 20px;
+  color: #6b7280;
 }
 
+/* =======================
+   Custos
+======================= */
 .custos {
-  margin-top: 12px;
+  margin-top: 14px;
+  font-size: 14px;
 }
 
 .custos li {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  color: #374151;
 }
 
 .custos .total {
   font-weight: 700;
-  border-top: 1px solid #F8D2A0;
-  padding-top: 6px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 8px;
+  margin-top: 8px;
 }
 
+/* =======================
+   Ações modal
+======================= */
 .modal-actions {
-  margin-top: 12px;
+  margin-top: 16px;
   display: flex;
+  gap: 10px;
   justify-content: space-between;
 }
 
-
-
+/* =======================
+   Header
+======================= */
 .app-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px;
-  border-bottom: 1px solid #F8D2A0;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+/* Botão home */
 .btn-home {
   background: transparent;
   border: none;
@@ -127,8 +185,64 @@
   font-size: 20px;
   font-weight: 600;
   color: #ffffff;
+  opacity: 0.9;
 }
 
 .btn-home:hover {
-  text-decoration: underline;
+  opacity: 1;
+}
+
+
+
+
+.modal select,
+.modal input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #f8d2a0;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* Botão principal */
+.btn-primario {
+  flex: 1;
+  background-color: #1e40af;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primario:hover {
+  background-color: #1c3aa3;
+}
+
+/* Botão secundário */
+.btn-secundario {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #f8d2a0;
+  color: #000000;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secundario:hover {
+  background-color: #fdf1e0;
 }
