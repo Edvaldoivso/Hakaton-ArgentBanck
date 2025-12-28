@@ -48,3 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
     saldoEl.innerText = formatar(window.saldoTotal);
   }
 });
+
+
+function abrirInfo(el) {
+  const texto = el.dataset.text;
+  document.getElementById("infoModalText").innerText = texto;
+  document.getElementById("infoModal").classList.remove("hidden");
+}
+
+function fecharInfo() {
+  document.getElementById("infoModal").classList.add("hidden");
+}

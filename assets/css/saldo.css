@@ -140,3 +140,116 @@
   height: 100%;
   transition: height 0.4s ease;
 }
+
+
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid #F8D2A0;
+}
+
+.btn-home {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.btn-home:hover {
+  text-decoration: underline;
+}
+
+
+.descritivoSaldos {
+  border: 1px solid #f8d2a0; /* borda padrão do projeto */
+  border-radius: 8px;
+  background-color: transparent; /* transparente */
+  padding: 12px 14px;
+  margin: 12px 0;
+  text-align: center;
+}
+
+/* Texto interno */
+.descritivoSaldos small {
+  font-size: 11px;
+  font-weight: 800;
+  color: #555555;
+  line-height: 1.4;
+  display: block;
+}
+
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #ffffff;
+  border: 1px solid #f8d2a0;
+  border-radius: 8px;
+  padding: 16px;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #f8d2a0;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.btn-primario {
+  flex: 1;
+  background-color: #0f68dc;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #f8d2a0;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}

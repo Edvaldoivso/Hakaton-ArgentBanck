@@ -92,3 +92,44 @@ function sacar(tipo) {
     atualizarTela();
   }
 }
+
+
+
+
+
+
+
+  let acaoAtual = null;
+  let tipoAtual = null;
+
+  function abrirModal(acao, tipo) {
+    acaoAtual = acao;
+    tipoAtual = tipo;
+
+    document.getElementById('modalTitulo').innerText =
+      acao === 'depositar' ? 'Valor para depósito' : 'Valor para saque';
+
+    document.getElementById('valorInput').value = '';
+    document.getElementById('modalValor').classList.remove('hidden');
+  }
+
+  function fecharModal() {
+    document.getElementById('modalValor').classList.add('hidden');
+  }
+
+  function confirmarAcao() {
+    const valor = parseFloat(document.getElementById('valorInput').value);
+
+    if (!valor || valor <= 0) {
+      alert('Informe um valor válido');
+      return;
+    }
+
+    if (acaoAtual === 'depositar') {
+      depositar(tipoAtual, valor);
+    } else if (acaoAtual === 'sacar') {
+      sacar(tipoAtual, valor);
+    }
+
+    fecharModal();
+  }

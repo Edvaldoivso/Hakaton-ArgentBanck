@@ -34,12 +34,12 @@
 }
 
 .resumo-footer {
-  margin-top: 16px;
+  margin-top: 25px;
   font-size: 14px;
 }
 
 .alert {
-  margin-top: 8px;
+  margin-top: 20px;
   padding: 8px;
   border-radius: 6px;
   background-color: #ffe5e5;
@@ -108,4 +108,27 @@
   margin-top: 12px;
   display: flex;
   justify-content: space-between;
+}
+
+
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid #F8D2A0;
+}
+
+.btn-home {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.btn-home:hover {
+  text-decoration: underline;
 }

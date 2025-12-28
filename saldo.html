@@ -1,130 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acessar Saldo</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acessar Saldo</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/saldo.css">
-</head>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/saldo.css" />
+  </head>
 
+  <!-- Modal global -->
+  <div id="infoModal" class="modal hidden">
+    <div class="modal-overlay" onclick="fecharInfo()"></div>
 
-<!-- Modal global -->
-<div id="infoModal" class="modal hidden">
-  <div class="modal-overlay" onclick="fecharInfo()"></div>
-
-  <div class="modal-content">
-    <span class="modal-close" onclick="fecharInfo()">×</span>
-    <p id="infoModalText"></p>
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharInfo()">×</span>
+      <p id="infoModalText"></p>
+    </div>
   </div>
-</div>
 
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <button class="btn-home" onclick="navigateTo('index.html')">⬅</button>
 
-<body>
+        <h1>Saldo total: <span id="saldoTotal">R$ 0,00</span></h1>
+      </header>
 
-<div class="app-container">
+      <div class="descritivoSaldos">
+        <small
+          >Na nossa visão exclusiva estratégica do seu dinheiro, cada uma das
+          partes do seu saldo pode ser usada para um fim especifico se voce se
+          mantiver dentro dos limites todos os meses a sua riquesa real vai
+          estar cada vez mais proxima do que voce espera
+        </small>
+      </div>
 
-  <header class="app-header">
-    <h1>Saldo total: <span id="saldoTotal">R$ 0,00</span></h1>
-  </header>
-<main class="app-body">
+      <main class="app-body">
+        <div class="saldo-wrapper">
+          <div class="saldo-bar">
+            <div class="segment enrich" data-key="enriquecimento">
+              <div class="segment-bg">
+                <div class="segment-fill"></div>
+              </div>
+              <span class="label">Enriquecimento</span>
+              <span class="value" id="val-enriquecimento"></span>
+            </div>
 
-  <div class="saldo-wrapper">
+            <div class="segment consume" data-key="consumo">
+              <div class="segment-bg">
+                <div class="segment-fill"></div>
+              </div>
+              <span class="label">Consumo</span>
+              <span class="value" id="val-consumo"></span>
+            </div>
 
-    <div class="saldo-bar">
+            <div class="segment daily" data-key="dia-a-dia">
+              <div class="segment-bg">
+                <div class="segment-fill"></div>
+              </div>
+              <span class="label">Contas dia a dia</span>
+              <span class="value" id="val-dia"></span>
+            </div>
+          </div>
 
-      <div class="segment enrich" data-key="enriquecimento">
-  <div class="segment-bg">
-    <div class="segment-fill"></div>
-  </div>
-  <span class="label">Enriquecimento</span>
-  <span class="value" id="val-enriquecimento"></span>
-</div>
+          <div class="saldo-actions">
+            <div class="action-group">
+              <h3>
+                Riqueza gerada
+                <span
+                  class="info-icon"
+                  data-text="Saldo de urgências, sem se endividar. Ao manter dinheiro aqui, você tem rendimento automático de 100% do CDI ao mês, mas não deve sacar para não perder o rendimento mensal."
+                  onclick="abrirInfo(this)"
+                >
+                  i
+                </span>
+              </h3>
+              <button onclick="abrirModal('depositar','enriquecimento')">Depositar</button>
+              <button onclick="abrirModal('sacar', 'enriquecimento')">Sacar</button>
+            </div>
 
-<div class="segment consume" data-key="consumo">
-  <div class="segment-bg">
-    <div class="segment-fill"></div>
-  </div>
-  <span class="label">Consumo</span>
-  <span class="value" id="val-consumo"></span>
-</div>
+            <div class="action-group">
+              <h3>
+                Dinheiro do Dia a Dia
+                <span
+                  class="info-icon"
+                  data-text="Use este saldo para streaminG, NetFlix, Spotfy, passeios, salão e barbeiro, shopping online, presentes e lazer em geral."
+                  onclick="abrirInfo(this)"
+                >
+                  i
+                </span>
+              </h3>
+              <button onclick="abrirModal('depositar','consumo')">Depositar</button>
+              <button onclick="abrirModal('sacar', 'consumo')">Sacar</button>
+            </div>
 
-<div class="segment daily" data-key="dia-a-dia">
-  <div class="segment-bg">
-    <div class="segment-fill"></div>
-  </div>
-  <span class="label">Contas dia a dia</span>
-  <span class="value" id="val-dia"></span>
-</div>
+            <div class="action-group">
+              <h3>
+                Dinheiro das Contas
+                <span
+                  class="info-icon"
+                  data-text="Use para energia elétrica, água, aluguel, mercado, transporte, saúde e farmácia."
+                  onclick="abrirInfo(this)"
+                >
+                  i
+                </span>
+              </h3>
+              <button onclick="abrirModal('depositar', 'dia-a-dia')">
+                Depositar
+              </button>
+              <button onclick="abrirModal('sacar', 'dia-a-dia')">Sacar</button>
+            </div>
+          </div>
+        </div>
+      </main>
 
+      <footer class="app-footer">Gestão inteligente do seu dinheiro</footer>
     </div>
 
-    <div class="saldo-actions">
+    <script src="assets/js/actions.js"></script>
+    <script src="assets/js/saldo.js"></script>
+  </body>
 
-      <div class="action-group">
-        <h3>
-          Enriquecimento
-          <span class="info-icon"
-            data-text="Saldo de urgências, sem se endividar. Ao manter dinheiro aqui, você tem rendimento automático de 100% do CDI ao mês, mas não deve sacar para não perder o rendimento mensal."
-            onclick="abrirInfo(this)">
-            i
-          </span>
-        </h3>
-        <button onclick="depositar('enriquecimento')">Depositar</button>
-        <button onclick="sacar('enriquecimento')">Sacar</button>
+  <div id="modalValor" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="modalTitulo">Informe o valor</h3>
+
+      <input
+        type="number"
+        id="valorInput"
+        placeholder="Digite o valor"
+        min="0"
+        step="0.01"
+      />
+
+      <div class="modal-actions">
+        <button class="btn-secundario" onclick="fecharModal()">Cancelar</button>
+        <button class="btn-primario" onclick="confirmarAcao()">
+          Confirmar
+        </button>
       </div>
-
-      <div class="action-group">
-        <h3>
-          Dinheiro do Dia a Dia
-          <span class="info-icon"
-            data-text="Use este saldo para streaming, passeios, salão e barbeiro, shopping online, presentes e lazer em geral."
-            onclick="abrirInfo(this)">
-            i
-          </span>
-        </h3>
-        <button onclick="depositar('consumo')">Depositar</button>
-        <button onclick="sacar('consumo')">Sacar</button>
-      </div>
-
-      <div class="action-group">
-        <h3>
-          Dinheiro das Contas
-          <span class="info-icon"
-            data-text="Use para energia elétrica, água, aluguel, mercado, transporte, saúde e farmácia."
-            onclick="abrirInfo(this)">
-            i
-          </span>
-        </h3>
-        <button onclick="depositar('dia-a-dia')">Depositar</button>
-        <button onclick="sacar('dia-a-dia')">Sacar</button>
-      </div>
-
     </div>
-
   </div>
-
-</main>
-
-
-
-
-  <footer class="app-footer">
-    Gestão inteligente do seu dinheiro
-  </footer>
-
-</div>
-
-
-
-<script src="assets/js/actions.js"></script>
-<script src="assets/js/saldo.js"></script>
-</body>
 </html>
-
-

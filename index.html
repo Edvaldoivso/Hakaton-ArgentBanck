@@ -24,32 +24,75 @@
           <h1>Argent Bank</h1>
         </div>
       </header>
-      <main class="app-body">
-        <div class="saldo-resumo">
-          <span class="saldo-label">Saldo Comercial</span>
-          <strong id="saldoGlobal">R$ 0,00</strong>
-        </div>
 
+      <div class="saldo-resumo">
+        <span class="saldo-label">O seu Argent Saldo</span>
+        <strong id="saldoGlobal">R$ 0,00</strong>
+      </div>
+
+
+            <div class="saldoGasto-resumo">
+        <span class="saldoGasto-label">Neste já voce gastou</span>
+        <strong id="saldoGasto">R$ 0,00</strong>
+      </div>
+
+      <main class="app-body">
         <div class="grid-container">
-          <!-- Grid 6x6 -->
-          <div class="grid-item" onclick="navigateTo('saldo.html')">
-           Saldo Inteligente
+          <div
+            class="grid-item grid-item-with-desc out-rule"
+            onclick="navigateTo('saldo.html')"
+          >
+            <span class="grid-title ">Saldo Inteligente</span>
+            <small class="grid-desc">
+              Aqui voce entende como é melhor usar cada parte do seu
+              dinheiro, e o quanto voce está seguro financeiramente.
+            </small>
           </div>
 
-          <div class="grid-item" onclick="navigateTo('colaboradores.html')">
-            Meus Colaboradores
+          <div
+            class="grid-item grid-item-with-desc"
+            onclick="navigateTo('colaboradores.html')"
+          >
+            <span class="grid-title">Meus Colaboradores</span>
+            <small class="grid-desc">
+              Veja quais sao os gastos com as pessoas da sua
+              equipe, os custos fixos e o salario de cada um deles, e como isso
+              afeta o seu saldo.
+            </small>
+          </div>
+
+          <div
+            class="grid-item grid-item-with-desc"
+            onclick="navigateTo('colaboradores.html')"
+          >
+            <span class="grid-title">Custos de Pessoal</span>
+            <small class="grid-desc">
+              Visualize salários, encargos e provisões mensais
+            </small>
           </div>
         </div>
       </main>
 
-      <div class="acesso-colaboradores">
-        <a href="colaboradores.html" class="link-colaboradores">
-          Minha equipe
-        </a>
+      <div
+        class="grid-item grid-item-highlight"
+        onclick="navigateTo('colaboradores.html')"
+      >
+        <p class="grid-text">
+          Aqui você tem uma gama de fornecedores para conseguir os melhores
+          insumos selecionados, que nunca vão deixar o seu negócio na mão,
+          suprindo todas as áreas — do salão à padaria. Frete grátis e entrega
+          rápida.
+        </p>
+
+        <div class="acesso-colaboradores">
+          <a href="shopping.html" class="link-colaboradores light">
+            Acessar o Shopping
+          </a>
+        </div>
       </div>
 
       <footer class="app-footer">
-        <span>Parceiros</span>
+        <span>O banco do MEI e ME Brasileiro</span>
       </footer>
     </div>
 
